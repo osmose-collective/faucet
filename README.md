@@ -1,8 +1,8 @@
 # A faucet for osmose devnet
 
 ## Installation
-Be sure that NodeJs is installed (version > 8.x.x).
-Clone the repository
+Be sure that NodeJs is installed (version > 8.x.x)  
+Clone the repository  
 `npm install`
 
 ## Start the faucet
