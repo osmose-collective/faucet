@@ -1,0 +1,7 @@
+.logo {
+  text-align: center;
+}
+
+.input.is-primary, .textarea.is-primary {
+  border-color: #000000;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include partials/head %> 
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <div class="container logo">
+        <img src="./img/Logo_osmose.jpg" alt="Logo OSMOSE">
+        <p>Blockchain &amp; Crypto-currency for Cooperative Networks.<br>
+          OSMOSE is an ecosystem composed of Coops, NGO’s, Start-ups &amp; Friends.<br>
+          <a href="http://www.osmosecollective.com">http://www.osmosecollective.com</a>
+        </p>
+        <br>
+        <p>
+          This tool is a machine for distributing OSM tokens during the testing period.<br>
+          Create an OSMOSE wallet, which can be downloaded from the official website.<br>
+          Then enter your wallet address here, and click Send me test OSM.
+        </p>
+    </div>
+    <div class="container">
+      <div class=""><section class="section">
+        <div class="container bottompadding">
+          <form action="" method="POST">
+            <div class="field">
+              <label class="label">Enter your testnet account address</label>
+              <div class="control">
+                <input class="input is-primary" type="text" placeholder="Enter your testnet account address" value="" name="address">
+              </div>
+            </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <input type="submit" value="Send me test OSM" class="button is-link">
+              </div>
+            </div>
+          </form>
+        </div>
+        <br>
+        <div class="container">
+          <% if(formData.addressError){ %>    
+            <article class="message is-danger">
+              <div class="message-body">
+                <b>Invalid Address</b><br><span></span>
+              </div>
+            </article>
+          <%}%>
+          <% if(formData.delayAddressError){ %>    
+            <article class="message is-danger">
+              <div class="message-body">
+                <b>You have to wait 24h between each shipment to a specific wallet address</b><br><span></span>
+              </div>
+            </article>
+          <%}%>
+          <% if(formData.delayError){ %>    
+            <article class="message is-danger">
+              <div class="message-body">
+                <b>Faucet can send only 1 transaction every 30 seconds, please wait...</b><br><span></span>
+              </div>
+            </article>
+          <%}%>
+          <% if(formData.success){ %>    
+            <article class="message is-success">
+              <div class="message-body">
+                <b>1000 OSM sent to your wallet !!</b><br><span></span>
+              </div>
+            </article>
+          <%}%> 
+          <p></p>
+          <p></p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
