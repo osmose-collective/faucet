@@ -5,6 +5,8 @@ Be sure that NodeJs is installed (version > 8.x.x)
 Clone the repository  
 `npm install`
 
+You need a mongodb server running locally as well.
+
 ## Start the faucet
 `node main.js`
 

@@ -9,13 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "arkjs": "github:arkecosystem/ark-js#master",
+    "@arkecosystem/client": "^0.1.4",
+    "@arkecosystem/crypto": "^0.2.0",
     "async": "^2.6.1",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
-    "mongodb": "^2.2.36",
-    "xmlhttprequest": "^1.8.0"
+    "mongodb": "^2.2.36"
   }
 }
