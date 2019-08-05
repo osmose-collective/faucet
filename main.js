@@ -1,7 +1,10 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var osmose = require('./lib/osmose');
-var dbclient = require('./lib/dbclient');
+const express = require('express');
+const bodyParser = require('body-parser');
+const osmose = require('./lib/osmose');
+const dbclient = require('./lib/dbclient');
+
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 var app = express();
 app.use(express.static('public'));
@@ -52,4 +55,5 @@ app.post('/', async function(req, res) {
   res.render('index.ejs', param);
 });
 
-app.listen(8080);
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
