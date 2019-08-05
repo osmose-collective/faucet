@@ -19,6 +19,7 @@ app.get('/', function(req, res) {
       addressError: false,
       delayError: false,
       delayAddressError: false,
+      error: false,
       success: false
     }
   };
@@ -40,9 +41,12 @@ app.post('/', async function(req, res) {
   if(!param.formData.addressError) {
     if(await dbclient.CheckAddressInDatabase(address)) {
       if(await dbclient.CanSend()) {
-        osmose.SendOSM(address);
-        dbclient.AddAddressToDatabase(address);
-        param.formData.success = true;
+        if(await osmose.SendOSM(address)) {
+          dbclient.AddAddressToDatabase(address);
+          param.formData.success = true;
+        }
+        else
+          param.formData.error = true;
       }
       else {
         param.formData.delayError = true;

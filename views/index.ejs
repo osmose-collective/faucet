@@ -59,6 +59,13 @@
               </div>
             </article>
           <%}%>
+          <% if(formData.error){ %>    
+            <article class="message is-danger">
+              <div class="message-body">
+                <b>Error !! Please check server configuration !!</b><br><span></span>
+              </div>
+            </article>
+          <%}%>
           <% if(formData.success){ %>    
             <article class="message is-success">
               <div class="message-body">
