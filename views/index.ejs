@@ -10,7 +10,7 @@
         <img src="./img/Logo_osmose.jpg" alt="Logo OSMOSE">
         <p>Blockchain &amp; Crypto-currency for Cooperative Networks.<br>
           OSMOSE is an ecosystem composed of Coops, NGO’s, Start-ups &amp; Friends.<br>
-          <a href="http://www.osmosecollective.com">http://www.osmosecollective.com</a>
+          <a href="https://www.osmose.world">https://www.osmose.world</a>
         </p>
         <br>
         <p>
@@ -59,10 +59,17 @@
               </div>
             </article>
           <%}%>
+          <% if(formData.error){ %>    
+            <article class="message is-danger">
+              <div class="message-body">
+                <b>Error !! Please check server configuration !!</b><br><span></span>
+              </div>
+            </article>
+          <%}%>
           <% if(formData.success){ %>    
             <article class="message is-success">
               <div class="message-body">
-                <b>1000 OSM sent to your wallet !!</b><br><span></span>
+                <b>100 OSM sent to your wallet !!</b><br><span></span>
               </div>
             </article>
           <%}%> 
