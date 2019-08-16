@@ -1,0 +1,28 @@
+version: '2'
+services:
+  mongodb:
+    image: "mongo:4.0"
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - internal
+    restart: always
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
+
+  faucet:
+    build: .
+    restart: always
+    networks:
+      - internal
+      - service-proxy
+    environment:
+      VIRTUAL_HOST: faucet.osmose.world
+      VIRTUAL_PORT: 8080
+
+networks:
+  internal:
+  service-proxy:
+    external: true
